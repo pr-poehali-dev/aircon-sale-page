@@ -1,14 +1,26 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_LEAD_URL = "https://functions.poehali.dev/cecad81a-b191-4076-9254-5b9d0b95904e";
+
 export default function Index() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (name && phone) {
+    if (!name || !phone) return;
+    setLoading(true);
+    try {
+      await fetch(SEND_LEAD_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
+      });
+    } finally {
+      setLoading(false);
       setSubmitted(true);
     }
   };
@@ -23,14 +35,14 @@ export default function Index() {
             <div className="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center">
               <Icon name="Wind" size={18} className="text-white" />
             </div>
-            <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>КлимаТех</span>
+            <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>FreeКлимат</span>
           </div>
           <a
-            href="tel:+78001234567"
+            href="tel:+79218780506"
             className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-0.5"
           >
             <Icon name="Phone" size={15} />
-            8 800 123-45-67
+            +7 (921) 878-05-06
           </a>
         </div>
       </header>
@@ -210,10 +222,11 @@ export default function Index() {
 
               <button
                 type="submit"
-                className="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 rounded-xl transition-all duration-200 shadow-md hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                disabled={loading}
+                className="w-full bg-sky-500 hover:bg-sky-600 disabled:opacity-70 text-white font-bold py-4 rounded-xl transition-all duration-200 shadow-md hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
-                <Icon name="Send" size={18} />
-                Перезвоните мне
+                <Icon name={loading ? "Loader" : "Send"} size={18} className={loading ? "animate-spin" : ""} />
+                {loading ? "Отправляем..." : "Перезвоните мне"}
               </button>
 
               <p className="text-slate-400 text-xs text-center mt-4">
@@ -225,11 +238,11 @@ export default function Index() {
           <div className="mt-8 text-center">
             <p className="text-slate-400 text-sm mb-2">Или позвоните сами прямо сейчас</p>
             <a
-              href="tel:+78001234567"
+              href="tel:+79218780506"
               className="text-2xl font-bold text-sky-500 hover:text-sky-600 transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              8 800 123-45-67
+              +7 (921) 878-05-06
             </a>
             <p className="text-slate-400 text-xs mt-1">Бесплатно по России · пн–сб 9:00–20:00</p>
           </div>
@@ -243,7 +256,7 @@ export default function Index() {
             <div className="w-7 h-7 rounded-lg bg-sky-500 flex items-center justify-center">
               <Icon name="Wind" size={15} className="text-white" />
             </div>
-            <span className="font-bold text-white text-base" style={{ fontFamily: "'Montserrat', sans-serif" }}>КлимаТех</span>
+            <span className="font-bold text-white text-base" style={{ fontFamily: "'Montserrat', sans-serif" }}>FreeКлимат</span>
           </div>
           <p className="text-slate-500 text-sm">© 2024 · Продажа и монтаж кондиционеров</p>
         </div>
