@@ -71,7 +71,7 @@ export default function Index() {
             </h1>
 
             <p className="text-slate-500 text-lg leading-relaxed mb-8 max-w-md">
-              Одно из лучших предложений на рынке — покупай систему у нас и плати за установку значительно меньше конкурентов.
+              Одно из лучших предложений на рынке для жителей Санкт-Петербурга и Ленинградской области — покупай систему у нас и плати за установку значительно меньше конкурентов.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -96,7 +96,7 @@ export default function Index() {
             </div>
 
             <a
-              href="#form"
+              href="tel:+79218780506"
               className="inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-sky-300 hover:shadow-xl hover:-translate-y-1"
             >
               <Icon name="PhoneCall" size={20} />
