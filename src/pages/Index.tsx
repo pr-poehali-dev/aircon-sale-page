@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const SEND_LEAD_URL = "https://functions.poehali.dev/cecad81a-b191-4076-9254-5b9d0b95904e";
+const SEND_LEAD_URL = "https://functions.poehali.dev/51bc4f45-9c72-46e9-814f-872387571d8e";
 
 export default function Index() {
   const [name, setName] = useState("");
