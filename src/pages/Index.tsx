@@ -33,7 +33,10 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/3372afea-6e5d-4984-b552-cf55e81cbf96.png" alt="КомандаКлимата" className="h-10 w-auto" />
-            <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>КомандаКлимата</span>
+            <span className="font-bold text-slate-800 text-lg tracking-tight leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <span className="sm:hidden">Команда<br/>Климата</span>
+              <span className="hidden sm:inline">КомандаКлимата</span>
+            </span>
           </div>
           <a
             href="tel:+79214219381"
