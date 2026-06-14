@@ -40,7 +40,8 @@ export default function Index() {
             className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-0.5"
           >
             <Icon name="Phone" size={15} />
-            +7 (921) 421-93-81
+            <span className="hidden sm:inline">+7 (921) 421-93-81</span>
+            <span className="sm:hidden">Позвонить</span>
           </a>
         </div>
       </header>
