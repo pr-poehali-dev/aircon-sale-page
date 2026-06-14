@@ -33,41 +33,52 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Внешний круг */}
-              <circle cx="100" cy="100" r="90" stroke="url(#circleGrad)" strokeWidth="10" fill="none"/>
-              {/* Завиток ветра */}
-              <path
-                d="M100 40 C120 40, 148 52, 148 75 C148 95, 128 105, 108 98 C88 91, 75 78, 85 62 C92 50, 108 50, 112 62 C116 74, 104 82, 95 76"
-                stroke="url(#windGrad)" strokeWidth="9" fill="none" strokeLinecap="round"/>
-              {/* Волна верхняя */}
-              <path
-                d="M42 108 C58 100, 75 116, 95 108 C115 100, 132 116, 155 108"
-                stroke="url(#windGrad)" strokeWidth="7" fill="none" strokeLinecap="round"/>
-              {/* Волна нижняя */}
-              <path
-                d="M65 122 C80 115, 100 130, 122 122 C140 116, 155 124, 165 120"
-                stroke="#90cdf4" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.8"/>
-              {/* Зелёный лист */}
-              <path
-                d="M55 148 C60 110, 105 100, 120 120 C105 145, 70 158, 55 148 Z"
-                fill="url(#leafGrad)"/>
-              <path
-                d="M55 148 C75 130, 98 118, 120 120"
-                stroke="#2d7a2d" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5"/>
               <defs>
-                <linearGradient id="circleGrad" x1="10" y1="10" x2="190" y2="190" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#1a6fb5"/>
-                  <stop offset="100%" stopColor="#38bdf8"/>
+                <linearGradient id="circleGrad2" x1="10" y1="10" x2="190" y2="190" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#1565c0"/>
+                  <stop offset="100%" stopColor="#29b6f6"/>
                 </linearGradient>
-                <linearGradient id="windGrad" x1="40" y1="40" x2="160" y2="130" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#1a6fb5"/>
-                  <stop offset="100%" stopColor="#60c8f5"/>
+                <linearGradient id="windGrad2" x1="20" y1="80" x2="180" y2="80" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#1565c0"/>
+                  <stop offset="60%" stopColor="#1e88e5"/>
+                  <stop offset="100%" stopColor="#81d4fa"/>
                 </linearGradient>
-                <linearGradient id="leafGrad" x1="55" y1="100" x2="120" y2="160" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#4caf50"/>
-                  <stop offset="100%" stopColor="#2e7d32"/>
+                <linearGradient id="leafGrad2" x1="20" y1="130" x2="170" y2="130" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#2e7d32"/>
+                  <stop offset="100%" stopColor="#66bb6a"/>
                 </linearGradient>
+                <clipPath id="circleClip">
+                  <circle cx="100" cy="100" r="86"/>
+                </clipPath>
               </defs>
+
+              {/* Внешний круг */}
+              <circle cx="100" cy="100" r="90" stroke="url(#circleGrad2)" strokeWidth="9" fill="none"/>
+
+              {/* Синие воздушные волны — вдуваются справа налево внутри круга */}
+              <g clipPath="url(#circleClip)">
+                {/* Волна 1 — верхняя, самая крупная */}
+                <path
+                  d="M185 72 C160 60, 140 88, 115 76 C90 64, 72 88, 48 78 C35 72, 22 80, 15 86"
+                  stroke="url(#windGrad2)" strokeWidth="9" fill="none" strokeLinecap="round"/>
+                {/* Волна 2 — средняя */}
+                <path
+                  d="M185 96 C158 84, 136 112, 108 98 C82 86, 60 108, 32 98 C22 94, 14 100, 12 104"
+                  stroke="url(#windGrad2)" strokeWidth="7.5" fill="none" strokeLinecap="round" opacity="0.85"/>
+                {/* Волна 3 — нижняя синяя, тонкая */}
+                <path
+                  d="M185 118 C162 108, 144 128, 120 118 C98 108, 80 126, 58 118"
+                  stroke="#81d4fa" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.7"/>
+
+                {/* Зелёная волна-лист — вдувается снизу слева */}
+                <path
+                  d="M14 148 C40 132, 68 158, 98 142 C124 128, 148 152, 172 138 C182 132, 188 136, 190 140"
+                  stroke="url(#leafGrad2)" strokeWidth="10" fill="none" strokeLinecap="round"/>
+                {/* Листик-отросток на волне */}
+                <path
+                  d="M72 152 C80 130, 108 122, 118 138"
+                  stroke="url(#leafGrad2)" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              </g>
             </svg>
             <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>КомандаКлимата</span>
           </div>
