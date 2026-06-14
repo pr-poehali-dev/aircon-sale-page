@@ -245,11 +245,11 @@ export default function Index() {
           <div className="mt-8 text-center">
             <p className="text-slate-400 text-sm mb-2">Или позвоните сами прямо сейчас</p>
             <a
-              href="tel:+79218780506"
+              href="tel:+79214219381"
               className="text-2xl font-bold text-sky-500 hover:text-sky-600 transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              +7 (921) 878-05-06
+              +7 (921) 421-93-81
             </a>
             <p className="text-slate-400 text-xs mt-1">Бесплатно по России · пн–сб 9:00–20:00</p>
           </div>
