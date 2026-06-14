@@ -32,17 +32,18 @@ export default function Index() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center">
-              <Icon name="Wind" size={18} className="text-white" />
-            </div>
-            <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>FreeКлимат</span>
+            <img
+              src="https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/b913d88f-b3ba-4fd0-b777-3c6e2f95d006.jpg"
+              alt="КомандаКлимата логотип"
+              className="h-10 w-auto object-contain"
+            />
           </div>
           <a
-            href="tel:+79218780506"
+            href="tel:+79214219381"
             className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-0.5"
           >
             <Icon name="Phone" size={15} />
-            +7 (921) 878-05-06
+            +7 (921) 421-93-81
           </a>
         </div>
       </header>
@@ -51,10 +52,13 @@ export default function Index() {
       <section className="relative pt-20 overflow-hidden">
         <div
           className="absolute inset-0 z-0"
-          style={{ background: "linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 40%, #ffffff 70%)" }}
+          style={{
+            backgroundImage: "url('https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/989b11b8-4da3-4d06-bef0-1e456bc4ebd3.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-sky-100 rounded-full opacity-60 blur-3xl -translate-y-1/4 translate-x-1/4 z-0" />
-        <div className="absolute bottom-0 left-10 w-64 h-64 bg-blue-50 rounded-full opacity-80 blur-2xl z-0" />
+        <div className="absolute inset-0 z-0 bg-white/70" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           {/* Левая часть */}
@@ -96,7 +100,7 @@ export default function Index() {
             </div>
 
             <a
-              href="tel:+79218780506"
+              href="tel:+79214219381"
               className="inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-sky-300 hover:shadow-xl hover:-translate-y-1"
             >
               <Icon name="PhoneCall" size={20} />
