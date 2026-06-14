@@ -31,12 +31,45 @@ export default function Index() {
       {/* Шапка */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img
-              src="https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/b913d88f-b3ba-4fd0-b777-3c6e2f95d006.jpg"
-              alt="КомандаКлимата логотип"
-              className="h-10 w-auto object-contain"
-            />
+          <div className="flex items-center gap-3">
+            <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Внешний круг */}
+              <circle cx="100" cy="100" r="90" stroke="url(#circleGrad)" strokeWidth="10" fill="none"/>
+              {/* Завиток ветра */}
+              <path
+                d="M100 40 C120 40, 148 52, 148 75 C148 95, 128 105, 108 98 C88 91, 75 78, 85 62 C92 50, 108 50, 112 62 C116 74, 104 82, 95 76"
+                stroke="url(#windGrad)" strokeWidth="9" fill="none" strokeLinecap="round"/>
+              {/* Волна верхняя */}
+              <path
+                d="M42 108 C58 100, 75 116, 95 108 C115 100, 132 116, 155 108"
+                stroke="url(#windGrad)" strokeWidth="7" fill="none" strokeLinecap="round"/>
+              {/* Волна нижняя */}
+              <path
+                d="M65 122 C80 115, 100 130, 122 122 C140 116, 155 124, 165 120"
+                stroke="#90cdf4" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.8"/>
+              {/* Зелёный лист */}
+              <path
+                d="M55 148 C60 110, 105 100, 120 120 C105 145, 70 158, 55 148 Z"
+                fill="url(#leafGrad)"/>
+              <path
+                d="M55 148 C75 130, 98 118, 120 120"
+                stroke="#2d7a2d" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5"/>
+              <defs>
+                <linearGradient id="circleGrad" x1="10" y1="10" x2="190" y2="190" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#1a6fb5"/>
+                  <stop offset="100%" stopColor="#38bdf8"/>
+                </linearGradient>
+                <linearGradient id="windGrad" x1="40" y1="40" x2="160" y2="130" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#1a6fb5"/>
+                  <stop offset="100%" stopColor="#60c8f5"/>
+                </linearGradient>
+                <linearGradient id="leafGrad" x1="55" y1="100" x2="120" y2="160" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#4caf50"/>
+                  <stop offset="100%" stopColor="#2e7d32"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span className="font-bold text-slate-800 text-lg tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>КомандаКлимата</span>
           </div>
           <a
             href="tel:+79214219381"
@@ -52,13 +85,10 @@ export default function Index() {
       <section className="relative pt-20 overflow-hidden">
         <div
           className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/989b11b8-4da3-4d06-bef0-1e456bc4ebd3.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={{ background: "linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 40%, #ffffff 70%)" }}
         />
-        <div className="absolute inset-0 z-0 bg-white/70" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-sky-100 rounded-full opacity-60 blur-3xl -translate-y-1/4 translate-x-1/4 z-0" />
+        <div className="absolute bottom-0 left-10 w-64 h-64 bg-blue-50 rounded-full opacity-80 blur-2xl z-0" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           {/* Левая часть */}
@@ -171,8 +201,17 @@ export default function Index() {
       </section>
 
       {/* Форма */}
-      <section id="form" className="py-20 bg-gradient-to-b from-white to-sky-50">
-        <div className="max-w-xl mx-auto px-6">
+      <section id="form" className="py-20 relative overflow-hidden">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('https://cdn.poehali.dev/projects/3fbcc3c5-cfcd-4afe-83da-d6c2d6849c1d/bucket/989b11b8-4da3-4d06-bef0-1e456bc4ebd3.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="absolute inset-0 z-0 bg-white/80" />
+        <div className="relative z-10 max-w-xl mx-auto px-6">
           <div className="text-center mb-10">
             <p className="text-sky-500 font-semibold text-sm uppercase tracking-widest mb-3">Бесплатная консультация</p>
             <h2 className="text-3xl font-bold text-slate-900 mb-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
